@@ -1,1 +1,1 @@
-For learning javascript
+For learning java script

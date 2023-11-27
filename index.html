@@ -3,10 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript" src="sum_two_no.js"></script>
+    <script type="text/javascript" src="main.js"></script>
     <title>Document</title>
 </head>
 <body>
-    <button onclick="sumOfTwoNo(1,2)">Sum:</button>
+    <input type="text" name="num1" id="num1" placeholder="first number">
+    <input type="text" name="num2" id="num2" placeholder="second number">
+    <button onclick="sumOfTwoNo()" id="btn1">Sum</button>
+    <label id="result"></label><br>
+
+    <input type="text" name="mark" id="mark" placeholder="mark">
+    <input type="text" name="place" id="place" placeholder="place">
+    <input type="text" name="qualification" id="qualification" placeholder="qualification"><br>
+    <button onclick="validate()">Validate</button><br>
+    <label id = "validate_result" style="color: green;"></label>
+
+    <script>
+        document.body.style.backgroundColor="yellow"
+        var btn = document.getElementById('btn1')
+        btn.style.color = 'green'
+        btn.innerText = "click me"
+       // document.body.style.display="none"
+    </script>
 </body>
 </html>
