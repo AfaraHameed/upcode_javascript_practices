@@ -5,19 +5,19 @@ function sumOfTwoNo() {
   var result = document.getElementById("result");
   result.innerText = "sum is:" + add;
 }
-
+function showMessage(message, color) {
+  var result = document.getElementById("validate_result");
+  result.innerText = message;
+  result.style.color = color;
+}
 function validate() {
   var mark = parseInt(document.getElementById("mark").value);
   var place = document.getElementById("place").value;
   var qualification = document.getElementById("qualification").value;
 
   if (mark >= 50 && place == "kozhikode")
-    document.getElementById("validate_result").innerText =
-      "You are eligible to apply job";
+    showMessage("You are eligible to apply job", "green");
   else if ((mark >= 50 || place == "kannur") && qualification == "MBA")
-    document.getElementById("validate_result").innerText =
-      "You are eligible to apply job";
-  else
-    document.getElementById("validate_result").innerText =
-      "You are not eligible to apply job";
+    showMessage("You are eligible to apply job", "green");
+  else showMessage("You are not eligible to apply job", "orange");
 }
