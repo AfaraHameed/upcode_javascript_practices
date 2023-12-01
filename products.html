@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="products_container"></div>
+
+    <script>
+      async function getAllProducts() {
+        var productsResponse = await fetch(
+          "https://fakestoreapi.com/products",
+          {
+            method: "GET",
+          }
+        );
+        var data = await productsResponse.json();
+        console.log(data);
+        var productsCard = "";
+        for (p of data) {
+          productsCard =
+            productsCard +
+            "<div><h2>" +
+            p.title +
+            "</h2>" +
+            '<img src="' +
+            p.image +
+            '" width="100px" />' +
+            "</div>";
+        }
+        document.getElementById("products_container").innerHTML = productsCard;
+      }
+      getAllProducts();
+      async function createProduct() {
+        var d = {
+          title: "test product",
+          price: 13.5,
+          description: "lorem ipsum set",
+          image: "https://i.pravatar.cc",
+          category: "electronic",
+        };
+        var response = await fetch("https://fakestoreapi.com/products", {
+          method: "POST",
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify(d),
+        });
+        var res = await response.json();
+        console.log("created " , res);
+      }
+
+      createProduct();
+    </script>
+  </body>
+</html>
