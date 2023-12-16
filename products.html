@@ -51,6 +51,37 @@
       }
 
       createProduct();
+      async function updateProduct(){
+        var updatedData={
+            title: "test product",
+          price: 13.5,
+          description: "lorem ipsum set",
+          image: "https://i.pravatar.cc",
+          category: "electronic",
+        }
+
+        var updateResponse = await fetch("https://fakestoreapi.com/products/1",
+        {
+            method:'PUT',
+            headers:{'Content-Type':'application/json'}
+        }
+        )
+
+        var updateData = await updateResponse.json()
+        console.log("updated",updateData);
+      }
+updateProduct()
+
+async function deleteProduct(){
+    const delRes = await fetch('https://fakestoreapi.com/products/6',{method:"DELETE",
+headers:{'Content-Type':'application/json'}
+})
+
+const delData = await delRes.json()
+console.log("deleted",delData);
+}
+deleteProduct()
+
     </script>
   </body>
 </html>

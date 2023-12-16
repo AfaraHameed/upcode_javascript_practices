@@ -1,4 +1,4 @@
-var stud = [
+/*var stud = [
   {
     id: "1",
     name: "John Doe",
@@ -74,4 +74,8 @@ function sum() {
   sum1 = sum1 + no;
   var sum_result = document.getElementById("sum_result");
   sum_result.innerHTML = "Sum of numbers: " + sum1;
-}
+}*/
+
+let addTwoNumbers = require('./math_functions')
+var res = addTwoNumbers(1,2)
+console.log(res);
